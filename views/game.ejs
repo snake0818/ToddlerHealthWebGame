@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <%- include('./partials/head_libs.ejs') %>
+    <link rel="stylesheet" href="/stylesheets/game.css">
+    <script src="/javascripts/lib/phaser.min.js"></script>
+    <script src="/javascripts/canvas.js"></script>
+    <script src="/javascripts/<%= game %>.js"></script>
+</head>
+
+<body>
+  <div id="app"></div>
+</body>
+
+</html>

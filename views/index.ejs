@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- 設定網頁之標題 -->
+  <title>
+    <%= title %>
+  </title>
+  <!-- 包含使用Bootstrap及jQuery所需的頁頭檔 -->
+  <%- include('./partials/head_libs.ejs') %>
+    <script>
+      $(function () {
+        // 監聽按鈕點擊事件
+        $('[id^=btn]').click(function () {
+          var gameId = $(this).attr('id').replace('btn', ''); // 提取按鈕的ID中的遊戲編號
+          $('#game').attr('src', '/game' + gameId); // 設置iframe的src屬性為相應的遊戲地址
+        });
+      })
+    </script>
+</head>
+
+<body style="font-family:標楷體;">
+  <!-- 包含產生導覽列所需的標頭檔 -->
+  <%- include('./partials/navbar.ejs') %>
+
+    <!-- 以下為操作介面UI之設計 -->
+    <div class="container mt-5" style="text-align:center;">
+      <!-- 操作介面之標題 -->
+      <h2 class="bg-primary text-white rounded fw-bold fs-2">幼童健康飲食數位遊戲</h2>
+
+      <!-- 操作介面之內容 -->
+      <button id="btn1" class="btn btn-success btn-md fw-bold">食物分類</button>
+      <button id="btn2" class="btn btn-success btn-md fw-bold">找食物的家</button>
+      <button id="btn3" class="btn btn-success btn-md fw-bold">念謠配對圖卡</button>
+      <button id="btn4" class="btn btn-success btn-md fw-bold">彩虹蔬果的家</button>
+      <button id="btn5" class="btn btn-success btn-md fw-bold">蔬果顏色身體配對</button>
+      <button id="btn6" class="btn btn-success btn-md fw-bold">我的餐盤</button>
+
+      <div class="container mt-2">
+        <iframe id="game" src="" frameborder="1" style="width: 100%;height: 77vh;"></iframe>
+      </div>
+    </div>
+
+</body>
+<script>
+  // 防止重複嵌套
+  // 監聽 iframe 的 src 屬性變化事件
+  document.getElementById('game').addEventListener('load', function () {
+    // 檢查新的 src 是否為根路徑 '/'
+    if (this.contentWindow.location.pathname === '/') {
+      // 清除先前的內容
+      this.contentWindow.document.body.innerHTML = '';
+    }
+  });
+</script>
+
+</html>
