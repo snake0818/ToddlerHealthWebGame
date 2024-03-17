@@ -152,7 +152,7 @@ const gameStart = {
           foodTower.x + foodTower.width / 2, foodTower.y + foodTower.height / 2,
           foodTower.x + foodTower.width / 2.55, foodTower.y + foodTower.height / 3.55,
           foodTower.x - foodTower.width / 2.55, foodTower.y + foodTower.height / 3.55,]),
-        color: 0xDB5878,
+        color: 0xEFAA35,
         text: '全榖雜糧類',
         textSeat: [foodTower.x, foodTower.y + foodTower.height / 2],
       }
