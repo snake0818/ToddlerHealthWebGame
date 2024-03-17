@@ -92,7 +92,7 @@ const gameStart = {
     const ph = h / 1.1;
     const plate = this.add.image(w / 2, h / 2, 'plate').setDisplaySize(pw, ph);
     const Regions = [
-      { name: 'nut', bounds: this.add.rectangle(plate.x + pw / 4, plate.y - ph / 2.5, 0.33 * pw, 0.24 * ph, 0xCFAB6F).setStrokeStyle(0.005 * w, 0x0), text: '堅果類' },
+      { name: 'nut', bounds: this.add.rectangle(plate.x + pw / 4, plate.y - ph / 2.5, 0.33 * pw, 0.24 * ph, 0xCFAB6D).setStrokeStyle(0.005 * w, 0x0), text: '堅果類' },
       { name: 'milk', bounds: this.add.rectangle(plate.x - pw / 2.8, plate.y - ph / 3.5, 0.25 * pw, 0.3 * ph), text: '乳品類' },
       { name: 'meat', bounds: this.add.rectangle(plate.x + pw / 5.5, plate.y - ph / 11.5, 0.33 * pw, 0.25 * ph), text: '豆魚蛋肉類' },
       { name: 'fruit', bounds: this.add.rectangle(plate.x - pw / 3.6, plate.y + ph / 6.5, 0.16 * pw, 0.57 * ph), text: '水果類' },
